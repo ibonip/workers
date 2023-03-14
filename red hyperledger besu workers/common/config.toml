@@ -1,0 +1,42 @@
+# Valid TOML config file
+data-path="/var/lib/node/data"
+node-private-key-file="/var/lib/node/private/key"
+
+# Chain
+genesis-file="/var/lib/besu/genesis.json"
+min-gas-price=0
+
+# permissions
+permissions-nodes-config-file-enabled=true
+permissions-nodes-config-file="/var/lib/besu/permissions_config.toml"
+
+# Network
+host-whitelist=["*"]
+p2p-port=30000
+p2p-host="0.0.0.0"
+discovery-enabled=true
+max-peers=42
+
+# Monitoring
+metrics-enabled=true
+
+# RPC configuration
+rpc-http-enabled=true
+rpc-http-port=8547
+rpc-http-cors-origins=["all"]
+rpc-http-api=[ 'ADMIN', 'ETH', 'NET', 'WEB3', 'CLIQUE', 'IBFT', 'PERM', 'DEBUG', 'MINER', 'EEA', 'PRIV', 'TXPOOL']
+
+# WS RPC configuration
+rpc-ws-enabled=true
+rpc-ws-port=8549
+rpc-ws-host="0.0.0.0"
+rpc-ws-api=[ 'ADMIN', 'ETH', 'NET', 'WEB3', 'CLIQUE', 'IBFT', 'PERM', 'DEBUG', 'MINER', 'EEA', 'PRIV', 'TXPOOL']
+
+
+# Mining, ignored in clique or ibft
+miner-enabled=true
+miner-coinbase="0xb641d88590f8c596b3fa8ad5b6109a177322e3e7"
+
+# TxPool CHECK IN PRODUCTION
+tx-pool-retention-hours="1"
+tx-pool-max-size="8000"
