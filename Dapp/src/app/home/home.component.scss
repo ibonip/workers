@@ -1,0 +1,48 @@
+.iconoxxl{
+    font-size: 6rem;
+    margin: 1rem;
+    cursor:pointer;
+   }
+   
+   .opciones{
+    margin-top: 2rem;
+}
+
+
+#textEli
+{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color:#2a3e53;
+    margin-top: 2rem;
+}
+#menuOpcionesLoggin
+{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+#contenido
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenidologging
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botonm{
+    color:#cfb5ba;
+    width: 15rem;
+    margin: 2px;
+}

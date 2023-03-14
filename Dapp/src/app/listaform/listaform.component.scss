@@ -1,0 +1,117 @@
+.formulario
+{
+    padding:2rem;
+}
+
+.formulario label
+{
+ margin:0.4rem;
+}
+
+.formulario input
+{
+  width: 10rem;
+  height: 30px;
+}
+
+.checkbox
+{
+    width: 5rem !important;
+    height: 1.5rem !important;
+    position: relative !important;
+    top: 5px !important;
+}
+
+.formulario select
+{
+  width: 10rem;
+  height: 30px;
+}
+
+.boton{
+  margin-left: 10px;
+}
+
+.botonanadir
+{
+    margin-left: 20px;
+}
+
+.listado
+{
+  padding: 2rem;
+  background-color:#bcbaba;
+
+}
+
+.tablalistado td
+{
+  padding: 0.4rem;
+}
+
+.tablalistado th
+{
+  padding: 0.4rem;
+}
+
+.tituloPart{
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+#capadetalleTareas
+{
+  display:flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  color:rgb(109, 38, 38);
+  margin-bottom: 1rem;
+}
+
+#contenidomaestro
+{
+  display:flex;
+  flex-direction: row;
+}
+
+
+#capadetalleTareas div
+{
+  margin-left: 10px;
+ 
+}
+
+#cabecera
+{
+  display:flex;
+  flex-direction: row;
+  font-weight: bolder;
+  margin-bottom: 1.2rem;
+}
+
+.c_id{
+ width:50px;
+}
+.c_descripcion
+{
+  width:400px;
+  font-weight: bolder;
+
+}
+.c_fechaalta
+{
+  width:120px;
+}
+.c_fechafin
+{
+  width:120px;
+}
+.c_recompensa
+{
+  width:100px;
+}
+
+.c_idemp{
+  width:60px;
+}

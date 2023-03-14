@@ -1,0 +1,99 @@
+
+
+.ContenWallet
+{
+    display: flex;
+    padding: 8px;
+}
+
+
+#WalletData{
+    display:flex;
+    flex-direction: row;
+    color:white;
+}
+
+.divWalletIN{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icono{
+    cursor: pointer !important;
+    padding-right: 8px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color:#cfb5ba!important;
+}
+
+.iconob{
+    padding-right: 5px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color:#cfb5ba!important;
+}
+
+.iconoc{
+    padding-right: 3px;
+    padding-left: 3px;
+    font-size: 2.6rem;
+    color:#cfb5ba!important;
+}
+
+.back{
+    color:white;
+    cursor: pointer;
+}
+
+.logo{
+    color:#cfb5ba;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+.iconosin{
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color:#cfb5ba!important;
+}
+
+.tmini{
+    color:#cfb5ba!important;
+    font-weight: bolder;
+    font-size: 0.7rem;
+    margin-right: 5px;
+}
+
+
+
+.ContenWalletC{
+color:white;
+display: flex;
+align-items: center;
+margin-left: 5px;
+padding: 4px;
+padding-left: 12px;
+padding-right: 12px;
+border-radius: 10px;
+  border:#cfb5ba solid 2px;
+cursor: pointer;
+}
+
+#menusuperior
+{
+    display:flex;
+    align-items: end;
+    flex-direction: row;
+    background-color: #2a3e53;
+    width: 100%;
+
+}
+
+.metamask
+{
+    width:50px;
+}
+

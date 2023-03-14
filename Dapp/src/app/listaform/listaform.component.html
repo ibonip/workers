@@ -1,0 +1,169 @@
+
+
+<div id="contenedorFormIntroducir"  *ngIf="FormIntroduce">
+  
+  <div id="contenedorFormEmpleado" class="formulario" *ngIf="Listaempvisible">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmitEmp(myForm.value)">
+      <label>
+        Wallet<br>
+        <input type="wallet" style="width:300px" formControlName="wallet">
+      </label>
+      <label>
+        ID Empleado<br>
+        <input type="idemp" formControlName="idemp">
+      </label>
+      
+      <label>
+        Tipo Emp.<br>
+          <select [(ngModel)]="selectedtipoemp" formControlName="tipoemp">
+            <option *ngFor="let tipo of tipoemp" [value]="tipo">{{ tipo }}</option>
+          </select>
+      </label>
+
+      <label>
+        Activo <br>
+        <input type="checkbox" class="checkbox" [(ngModel)]="empactivo" formControlName="activo">
+      </label>
+      
+      <button type="submit" class="botonanadir"  >Añadir</button>
+    </form>
+  </div>
+
+
+
+  <div id="contenedorFormTareas" class="formulario" *ngIf="ListaTareasvisible">
+    <form [formGroup]="myFormT" (ngSubmit)="onSubmitTarea(myFormT.value)">
+      <label>
+        Descripción<br>
+        <input type="wallet" style="width:600px" formControlName="descripcion">
+      </label>
+      <label>
+        Plazo<br>
+        <input type="idemp" style="width:60px"  formControlName="plazo"> días
+      </label>
+      
+      <label>
+        Recompensa<br>
+        <input type="idemp"  style="width:60px" formControlName="recompensa"> WRC
+      </label>
+
+      <button type="submit" class="botonanadir">Añadir</button>
+    </form>
+  </div>
+
+
+
+  <div id="contenedorFormRecomp" class="formulario" *ngIf="ListaRecompensasvisible">
+    <form [formGroup]="myFormR" (ngSubmit)="onSubmitRecompensa(myFormR.value)">
+      <label>
+        Descripción<br>
+        <input type="wallet" style="width:600px" formControlName="descripcion">
+      </label>
+      <label>
+        Importe<br>
+        <input type="idemp" style="width:60px"  formControlName="importe"> WRC
+      </label>
+
+      <button type="submit" class="botonanadir">Añadir</button>
+    </form>
+  </div>
+
+
+
+</div>
+
+
+<!-- EMPLEADOS --> 
+
+
+  <div id="contEmpleadoList" class="listado" *ngIf="Listaempvisible">
+
+    <table class="tablalistado">
+      <thead>
+        <tr>
+          <th >ID </th>
+          <th >Wallet</th>
+          <th >Activo</th>
+          <th >Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let registro of ArrayListaEmp">
+          <td>{{registro[0]}}</td>
+          <td>{{registro[1]}}</td>
+          <td>{{registro[2]}}</td>
+          <td>{{registro[3]}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  
+  <!--TAREAS --> 
+
+  <div id="contTareaLista" class="listado" *ngIf="ListaTareasvisible">
+
+    <div class="TareaMaestro">
+            <div id="cabecera">
+            <div class="c_id" >ID</div>
+            <div class="c_descripcion">Descripción </div>
+            <div class="c_fechaalta">Fecha Alta</div>
+            <div class="c_fechafin">Fin Plazo</div>
+            <div class="c_recompensa" >Recompensa</div>
+            </div>
+
+          <div *ngFor="let registro of ArrayListaTareas">
+                   
+          <div id="contenidomaestro">
+              <div class="c_id" >{{registro[0]}}</div>
+              <div class="c_descripcion" style="color:#2a3e53;">{{registro[1]}}</div>
+            
+              <div class="c_fechaalta" >{{timeConverter(registro[3])}}</div>
+              <div class="c_fechafin"> {{timeConverter(registro[4])}}</div>
+              <div class="c_recompensa" >{{registro[2]}}    <i class="bi bi-box iconob"></i><span class="tmini"></span></div>
+              <div> <button type="submit" (mousedown)="clickunirse(registro[0])" class="boton" *ngIf="botonesemp">Unirse</button></div>
+          </div>
+       
+          <div class="tituloPart">Participantes</div>
+              <div *ngFor="let registro2 of ArrayListaTareasEmp">
+                <div *ngIf="registro[0]==registro2[1]">  <!-- JOIN id detalle con id-->
+             
+                    <div id="capadetalleTareas">
+                  
+                    <div class="c_idemp"  >{{registro2[2]}}</div>
+                    <div> completado <input type="checkbox" [checked]="!!registro2[3]" disabled /></div>
+                    <div> pagado <input type="checkbox" [checked]="!!registro2[4]" disabled/></div>
+                    <div *ngIf="botonvalidar"><button type="submit" (mousedown)="clickValidar(registro2[0])" class="boton" *ngIf="!!!registro2[3]">Verificar</button> </div>
+                    <div *ngIf="botonpagar"><button type="submit" (mousedown)="clickPagar(registro2[0],registro2[2],registro[2])" class="boton" *ngIf="!!!registro2[4]">Pagar</button> </div>
+                    </div>
+              </div> 
+            </div>
+
+      </div>
+ </div>
+</div>
+
+   <!--RECOMPENSAS --> 
+
+
+  <div id="contRecompensaLista" class="listado" *ngIf="ListaRecompensasvisible">
+
+    <table class="tablalistado">
+      <thead>
+        <tr>
+          <th >Descripción </th>
+          <th >Importe</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let registro of ArrayListaRecompensas">
+          <td>{{registro[1]}}</td>
+         
+          <td>{{registro[2]}}  <i class="bi bi-box iconob"></i><span class="tmini"></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

@@ -1,0 +1,62 @@
+
+<div id="menusuperior">
+    <div class="ContenWallet" >
+               <div class="ContenWalletB" *ngIf="!wallet.address">
+             <img src="./assets/graficos/metamasklogo.png" class="metamask" alt="Metamask">
+               </div>
+               <div class="ContenWalletC" *ngIf="!wallet.address">
+                 <div class="botonWallet" (mousedown)="loginMetamask()">Conectar Wallet</div>
+                 
+               </div>
+                 <div id="WalletData" *ngIf="wallet.address">
+                   <div class="divWalletIN">
+                     
+                     <div class="divWalletINiconOuter">
+                       <div class="divWalletINicon">
+                         <i class="bi bi-wallet iconosin"></i>
+                       </div>
+                     </div>
+                       <div class="divWalletINaddress">
+                         {{wallet.address | slice:0:3}}...{{wallet.address | slice:-4}}
+                       </div>
+
+                       <div>
+                         <i class="bi bi-box iconob"></i><span class="tmini">WRT</span>X
+                         {{wallet.balance}}
+                       </div>
+                     
+                       <div class="divWalletOUT" (mousedown)="desconectar()">
+                         <i class="bi bi-arrow-bar-right icono" title="salir" ></i>
+                       </div>
+                       
+                   </div>
+                 </div>
+             </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" >
+        <div class="container-fluid">
+          <i class="bi bi-box iconoc"></i>
+          <span class="navbar-brand logo" (click)="goInicio()">WORKERS</span>  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+
+              <li class="nav-item">
+                <span *ngIf="menuNav" (click)="goMenu()" class="nav-link back">&lt;Volver al menu</span>
+              </li>
+              
+ 
+            </ul>
+            <form>
+       
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<router-outlet></router-outlet>
+
